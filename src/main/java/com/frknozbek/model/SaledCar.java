@@ -1,7 +1,5 @@
 package com.frknozbek.model;
 
-import java.util.List;
-
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.DocumentReference;
 
@@ -21,9 +19,9 @@ public class SaledCar extends BaseEntity {
     private Gallerist gallerist;
 
     @DocumentReference(lazy = true)
-    private List<Car> car;
+    private Car car;
 
     @DocumentReference(lazy = true)
-    private List<Customer> customer;
+    private Customer customer;
 
 }
