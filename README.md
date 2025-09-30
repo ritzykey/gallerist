@@ -53,3 +53,8 @@ src
 Bu proje, Udemy üzerinde tamamladığım
 Spring Core | Spring Rest API | Spring Data JPA | Spring Validation | JUnit5 | Spring Security + JWT | Spring Pagination
 kursu kapsamında öğrenilen konuları pratiğe dökmek için hazırlanmıştır.
+
+[Türkiye'nin En Güncel Spring Kursu: 2025](https://www.udemy.com/share/10bZqJ/)
+Created by [Enes Bayram](https://www.udemy.com/user/enes-bayram-4/)
+
+
