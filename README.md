@@ -5,6 +5,7 @@ Bu proje, **Spring ekosisteminin temel bileşenlerini** öğrenmek ve uygulamak 
 ## 🚀 Kullanılan Teknolojiler
 - **Spring Core** – Bağımlılık enjeksiyonu, IoC Container
 - **Spring REST API** – RESTful servislerin geliştirilmesi
+- **Spring Data MongoDB** – NoSQL veritabanı işlemleri
 - **Spring Data JPA** – ORM, veri tabanı işlemleri
 - **Spring Validation** – Request body ve parametre validasyonları
 - **Spring Security + JWT** – Kimlik doğrulama ve yetkilendirme
@@ -18,8 +19,8 @@ src
 ┃ ┣ java/com/example/project
 ┃ ┃ ┣ controller # REST controller katmanı
 ┃ ┃ ┣ service # İş mantığı (business logic)
-┃ ┃ ┣ repository # JPA repository arayüzleri
-┃ ┃ ┗ model # Entity sınıfları
+┃ ┃ ┣ repository # MongoDB repository arayüzleri
+┃ ┃ ┗ model # Document sınıfları
 ┃ ┗ resources
 ┃ ┗ application.properties # Konfigürasyonlar
 ┗ test

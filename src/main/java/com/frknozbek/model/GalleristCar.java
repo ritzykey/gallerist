@@ -1,6 +1,5 @@
 package com.frknozbek.model;
 
-import java.util.List;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.DocumentReference;
@@ -17,10 +16,10 @@ import lombok.Setter;
 @AllArgsConstructor
 public class GalleristCar extends BaseEntity {
 
-    @DocumentReference(lazy = true)   
+    @DocumentReference(lazy = true)
     private Gallerist gallerist;
 
-    @DocumentReference(lazy = true)   
-    private List<Car> car;
+    @DocumentReference(lazy = true)
+    private Car car;
 
 }
