@@ -28,6 +28,6 @@ public class Customer extends BaseEntity {
     @DocumentReference(lazy = true)
     private Address address;
 
-    @DocumentReference(lazy = true)
+    @DocumentReference()
     private Account account;
 }
