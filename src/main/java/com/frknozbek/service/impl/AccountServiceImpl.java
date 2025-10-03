@@ -34,7 +34,12 @@ public class AccountServiceImpl implements IAccountService {
 
         BeanUtils.copyProperties(savedAccount, dtoAccount);
 
-        return dtoAccount;  
+        return dtoAccount;
     }
- 
+
+    @Override
+    public String sayHello() {
+        return "Hello";
+    }
+
 }

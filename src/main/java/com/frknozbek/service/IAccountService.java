@@ -7,4 +7,6 @@ public interface IAccountService {
 
     public DtoAccount saveAccount(DtoAccountIU dtoAccountIU); 
 
+    public String sayHello();
+
 }

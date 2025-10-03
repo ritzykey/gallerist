@@ -1,6 +1,7 @@
 package com.frknozbek.controller.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,10 +23,10 @@ public class RestAccountControllerImpl extends RestBaseController implements IRe
     @Autowired
     private IAccountService accountService;
 
-    @PostMapping("/save")
+    @PostMapping(value = "/save", produces = MediaType.APPLICATION_JSON_VALUE)
     @Override
     public RootEntity<DtoAccount> saveAccount(@Valid @RequestBody DtoAccountIU dtoAccountIU) {
-
+        System.out.println("testsetset");
         return ok(accountService.saveAccount(dtoAccountIU));
     }
 

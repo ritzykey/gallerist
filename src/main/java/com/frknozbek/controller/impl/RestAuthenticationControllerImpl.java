@@ -25,6 +25,7 @@ public class RestAuthenticationControllerImpl extends RestBaseController impleme
     @PostMapping("/register")
     @Override
     public RootEntity<DtoUser> register(@Valid @RequestBody AuthRequest input) {
+        System.out.println("/register");
         return ok(authenticationService.register(input));
     }
 
