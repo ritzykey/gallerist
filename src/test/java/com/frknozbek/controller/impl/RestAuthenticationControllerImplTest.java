@@ -60,7 +60,7 @@ public class RestAuthenticationControllerImplTest {
 
     @Test
     void testRefreshToken() {
-
+        
     }
 
     @Test

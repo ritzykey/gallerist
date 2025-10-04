@@ -1,5 +1,6 @@
 package com.frknozbek.controller;
 
+
 public class RestBaseController {
     public <T> RootEntity<T> ok(T payload) {
 

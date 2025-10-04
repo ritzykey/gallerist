@@ -15,7 +15,7 @@ public class ErrorMessage {
     private String ofStatic;
 
 
-    String prepareErrorMessage() {
+    public String prepareErrorMessage() {
         StringBuilder builder = new StringBuilder();
 
         builder.append(messageType.getMessage());
