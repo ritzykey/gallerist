@@ -15,7 +15,8 @@ import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
-import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import static org.hamcrest.Matchers.*;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.frknozbek.dto.DtoAccount;
@@ -64,12 +65,13 @@ public class RestAccountControllerImplTest {
                 .accept(MediaType.APPLICATION_JSON)
                 .content(objectMapper.writeValueAsString(dtoAccountIU)))
                 .andDo(MockMvcResultHandlers.print())
-                .andExpect(MockMvcResultMatchers.status().isOk())
-                .andExpect(MockMvcResultMatchers.jsonPath("$.status").value(200))
-                .andExpect(MockMvcResultMatchers.jsonPath("$.payload.accountNo").value("123123"))
-                .andExpect(MockMvcResultMatchers.jsonPath("$.payload.amount").value("12312"))
-                .andExpect(MockMvcResultMatchers.jsonPath("$.payload.currencyType").value("TL"))
-                .andExpect(MockMvcResultMatchers.jsonPath("$.payload.iban").value("TR7567453"));
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.length()", equalTo(3)))
+                .andExpect(jsonPath("$.status").value(200))
+                .andExpect(jsonPath("$.payload.accountNo").value("123123"))
+                .andExpect(jsonPath("$.payload.amount").value("12312"))
+                .andExpect(jsonPath("$.payload.currencyType").value("TL"))
+                .andExpect(jsonPath("$.payload.iban").value("TR7567453"));
 
     }
 }
