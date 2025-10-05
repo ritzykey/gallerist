@@ -16,7 +16,11 @@ public class AccountRepositoryTest {
 
     @Test
     void testSaveAccount() {
-        Account savedAccount = accountRepository.save(Account.builder().accountNo("1231412").build());
+        Account savedAccount = accountRepository.save(
+                Account
+                        .builder()
+                        .accountNo("1231412")
+                        .build());
 
         assertNotNull(savedAccount);
         assertNotNull(savedAccount.getAccountNo());

@@ -1,5 +1,6 @@
 package com.frknozbek.service.impl;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -14,12 +15,14 @@ import com.frknozbek.exception.ErrorMessage;
 import com.frknozbek.exception.MessageType;
 import com.frknozbek.service.ICurrencyRatesService;
 
-import io.github.cdimascio.dotenv.Dotenv;
 
 @Service
 public class CurrencyRatesServiceImpl implements ICurrencyRatesService {
 
-    Dotenv dotenv = Dotenv.load();
+    // Dotenv dotenv = Dotenv.load();
+
+    @Value("${evds2.key}")
+    private String evds2Key;
 
     @Override
     public CurrencyRatesResponse getCurrenyRatesResponse(String startDate, String endDate) {
@@ -34,7 +37,7 @@ public class CurrencyRatesServiceImpl implements ICurrencyRatesService {
         endpoint = endpoint.concat("&type=" + type);
 
         HttpHeaders httpHeaders = new HttpHeaders();
-        httpHeaders.set("key", dotenv.get("EVDS2_KEY"));
+        httpHeaders.set("key",evds2Key);
 
         HttpEntity<?> httpEntity = new HttpEntity<>(httpHeaders);
 

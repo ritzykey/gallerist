@@ -1,0 +1,15 @@
+version: '3.9'
+
+services:
+  app:
+    env_file:
+      - ".env"
+    container_name: gallerist-app
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      # Host makinedeki MongoDB'ye bağlanmak için
+      SPRING_DATA_MONGODB_URI: "mongodb://host.docker.internal:27017/gallerist"
+    restart: always
+
