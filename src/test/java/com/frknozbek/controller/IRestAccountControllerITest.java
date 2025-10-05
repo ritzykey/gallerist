@@ -50,7 +50,7 @@ public class IRestAccountControllerITest {
 
         RootEntity<List<DtoAccount>> listDtoAccount = restAccountController.listAccount();
 
-        assertEquals(4, listDtoAccount.getPayload().size());
+        assertEquals(5, listDtoAccount.getPayload().size());
     }
 
 }

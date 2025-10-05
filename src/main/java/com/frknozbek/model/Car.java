@@ -3,6 +3,8 @@ package com.frknozbek.model;
 import java.math.BigDecimal;
 
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
+import org.springframework.data.mongodb.core.mapping.FieldType;
 
 import com.frknozbek.enums.CarStatusType;
 import com.frknozbek.enums.CurrencyType;
@@ -27,10 +29,13 @@ public class Car  extends BaseEntity{
 
     private Integer productionYear;
 
+    @Field(targetType = FieldType.DECIMAL128)
     private BigDecimal price;
 
     private CurrencyType currencyType;
 
+    
+    @Field(targetType = FieldType.DECIMAL128)
     private BigDecimal damagePrice;
 
     private CarStatusType carStatusType;
